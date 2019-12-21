@@ -29,7 +29,7 @@
 	}
 	
 .erweima{
-	margin-top:540px;
+	margin-top:38%;
 	width:180px;
 	height:180px;
 	background-color:red;
@@ -46,52 +46,26 @@
 .ul_1 li{
 	color:white;
 	width:45%;
-	
+	box-sizing: border-box;
+	padding-right: 30px;
+	padding-left:30px;
 	margin-top:15px;
 	display:flex;
-	justify-content: space-around;
-}
-.y3_div{
-	width:150px;
-	height:30px;
-	background-color:white;
-	text-align: center;
-	line-height: 30px;
-}
-.anim{  
-	transition: all 250ms;
-	margin-top: -97px;
-}
-.comment-list{
-	width: 200px;
-	height: 35px;
-	overflow: hidden;
-	position: absolute;
-	background-color: rgb(48, 44, 44);
-	border-radius: 9px;
-}
-.comment-item{
-	width: 100%;
-	height: 20px;
-	margin: 0 auto;
-	color: #fff;
-	
-	/*margin-top: 10px;*/
-	/*transition: top  5s;*/
-	
+	justify-content: space-between;
 }
 
-
-.comment-item-content{
+.kuan{
+	background-image: url('./bg_4_1.png');
+	background-repeat:no-repeat;
+	width:750px;
+	height:140px;
+	background-position: center;
+	background-size:100% 100%;
+	outline: none;
 	display:flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	margin:8px auto;
-	font-size: 20px;
-}
-#text{
-	margin-top:-70px;
-	font-size:25px;
+	color:white;
+	font-size:52px;
 
-	
 }

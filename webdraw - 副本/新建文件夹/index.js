@@ -12,7 +12,9 @@ new Vue({
 		timer:'',
 		phoneAll:'12345678911',
 		jpList:[],
-		phoneList:[]
+		phoneList:[],
+		stop:null,
+		phoneAll1:""
 	},
 	created: function () {
 		that=this;
@@ -42,12 +44,12 @@ new Vue({
 			//space
 			if (_key === 32) {
 				console.log("点击了space") 
-				that.getCommentList()
-				
+				that.getData();
 
-				setTimeout(function(){
-					that.getData();
-				},5000)
+				//that.getCommentList()
+				
+				//console.log(that.stop,'a');
+				
 			}
 			
 			
@@ -71,6 +73,10 @@ new Vue({
 				data: JSON.stringify(postData),
 				success: function (res) {
 					//console.log(res,2);
+					
+					
+					//console.log(that.stop,11);
+					
 					var i=0;
 					that.phoneList=res.data;
 					console.log(that.phoneList);
@@ -84,9 +90,9 @@ new Vue({
 					setTimeout(function(){
 						clearInterval(timer1);
 						console.log('5秒到了')
-					},5000);
+					},4900);
 
-					
+				
 				
 				},
 				error: function (res) {
@@ -104,12 +110,26 @@ new Vue({
 				contentType: 'application/json',
 				data: JSON.stringify(that.postData),
 				success: function (res) {
-					console.log(res);
-					if(res.data==null){
-						console.log('数据请求完毕啦');
-						alert(res.msg);
-						return
-				}
+					console.log(res,23);
+					that.stop=res.data;
+					console.log(that.stop,24);
+
+					if(that.stop!==null){
+					
+						setTimeout(function(){
+							that.phoneAll=that.phoneAll1;
+						},5000);
+						that.getCommentList();
+					}else{alert('活动已结束');return}
+					
+				// 	if(that.stop==null){
+				// 		console.log('数据请求完毕啦');
+				// 		//alert(res.msg);
+				// 		return
+				// }
+
+				that.phoneAll1=res.data.phoneAll;
+
 					// console.log(res.data.phoneAll)
 					// that.phoneAll=res.data.phoneAll;
 				},
