@@ -81,8 +81,8 @@ new Vue({
 					that.phoneList=res.data;
 					console.log(that.phoneList);
 					var timer1=setInterval(function(){
-						
-						that.phoneAll=that.phoneList[i].phone;
+						console.log(res,'b');
+						that.phoneAll=that.phoneList[i].phoneAll;
 						i++;
 						if(i>=that.phoneList.length){i=0;}
 
@@ -128,7 +128,7 @@ new Vue({
 				// 		return
 				// }
 
-				that.phoneAll1=res.data.phoneAll;
+				that.phoneAll1=res.data.phone;
 
 					// console.log(res.data.phoneAll)
 					// that.phoneAll=res.data.phoneAll;
